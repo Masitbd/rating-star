@@ -1,0 +1,15 @@
+<h1>Plays inde pagex</h1>
+<div class="row">
+   <% @plays.each do |play| %>
+     <div class="col-md-3">
+     <%= play.description %> <br>
+         <%= play.director %> <br>
+         <% if play.image.attached? %>
+            <%= link_to image_tag(play.image, class: "play"), play_path(play)  %>
+         <% end %>
+         <h2> <%= link_to play.title, play_path(play) %></h2>
+     </div>
+         
+      
+   <% end %>
+</div>
